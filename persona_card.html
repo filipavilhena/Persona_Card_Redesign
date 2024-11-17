@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/33e3e2b4ff.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <main>
+        <section class="content-wrapper">
+            <div class="search_box">
+                <input type="text" id="search_input" placeholder=" Search for Key Words" spellcheck="true">
+                <button type="button" onclick="searchText();" id="search_button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button type="button" onclick="cleanSearch(); searchActive();" id="clean_search" class="hidden"><i class="fa-solid fa-arrow-down fa-lg"></i> to clean your search</button>
+            </div>
+            <button class="slide-arrow" id="slide-arrow-prev">
+              &#8249;
+            </button>
+            
+            <button class="slide-arrow" id="slide-arrow-next">
+              &#8250;
+            </button>
+
+            <a href="index.html"><button type="button" id="homepage_button"><i class="fa-solid fa-house fa-2xl"></i></button></a>
+            
+            <ul class="slides-container" id="slides-container">
+              <li class="slide">
+                <p class="page_number">1/6</p>
+                <div class="image_container">
+                <img src="illustrations/illustration-01.png" alt="Preety - A middle school student with ADHD and dyslexia" class="illustrations">
+              </div>
+                <p class="persona_card_text">Preety is a middle school student with attention deficit hyperactivity disorder with dyslexia. She has difficulty reading, but she enjoys her literature class.</p>
+                <span class="sound_wrapper">
+                <button class="sound_button"><i class="fa-solid fa-volume-high fa-2xl"></i></button>
+                <button onclick="pageOne()"><i class="fa-solid fa-play fa-xl"></i></button>
+                <button onclick="stopVoiceOver()"><i class="fa-solid fa-pause fa-xl"></i></button>
+              </span>
+              </li>
+              <li class="slide">
+                <p class="page_number">2/6</p>
+                <div class="image_container">
+                <img src="illustrations/illustration-02.png" alt="Digital Textbook with text-to-speech software" class="illustrations">
+              </div>
+                <p class="persona_card_text">Her school started using online textbooks. She was initially worried about using this new format, but using text-to-speech software that highlights the text on the screen as it reads it aloud, she realized that she can focus on the content instead of struggling over every word.</p>
+                <span class="sound_wrapper">
+                <button class="sound_button"><i class="fa-solid fa-volume-high fa-2xl"></i></button>
+                <button onclick="pageTwo()"><i class="fa-solid fa-play fa-xl"></i></button>
+                <button onclick="stopVoiceOver()"><i class="fa-solid fa-pause fa-xl"></i></button>
+              </span>
+              </li>
+              <li class="slide">
+                <p class="page_number">3/6</p>
+                <div class="image_container">
+                  <img src="illustrations/illustration-03.png" alt="The right and wrong ways to design a accessible website for people with dislexia" class="illustrations">
+                </div>
+                <p class="persona_card_text">The text-to-speech software helps with other online text; but, her experience with websites varies. Some sites use graphics in a way that helps her to focus on the content that she would like to read, while other sites have distracting advertisements and moving content.</p>
+                <span class="sound_wrapper">
+                <button class="sound_button"><i class="fa-solid fa-volume-high fa-2xl"></i></button>
+                <button onclick="pageThree()"><i class="fa-solid fa-play fa-xl"></i></button>
+                <button onclick="stopVoiceOver()"><i class="fa-solid fa-pause fa-xl"></i></button>
+              </span>
+              </li>
+              <li class="slide">
+                <p class="page_number">4/6</p>
+                <div class="image_container">
+                <img src="illustrations/illustration-04.png" alt="Elements on a website that can help navigation" class="illustrations">
+                </div>
+                <p class="persona_card_text" id="persona_card_text">She has problems with online content when the navigation is unclear, and prefers sites that have navigation cues including a navigation bar, search box, bread-crumb trails, and a sitemap.</p>
+                <span class="sound_wrapper">
+                <button class="sound_button"><i class="fa-solid fa-volume-high fa-2xl"></i></button>
+                <button onclick="pageFour()"><i class="fa-solid fa-play fa-xl"></i></button>
+                <button onclick="stopVoiceOver()"><i class="fa-solid fa-pause fa-xl"></i></button>
+              </span>
+              </li>
+              <li class="slide">
+                <p class="page_number">5/6</p>
+                <div class="image_container">
+                <img src="illustrations/illustration-05.png" alt="Accessible librabry catalog on multiple devices" class="illustrations">
+              </div>
+                <p class="persona_card_text">Her school is using an accessible library catalog online. Before it she had to go to the library to find books. Now she can search the catalog using her phone, tablet, or laptop.</p>
+                <span class="sound_wrapper">
+                <button class="sound_button"><i class="fa-solid fa-volume-high fa-2xl"></i></button>
+                <button onclick="pageFive()"><i class="fa-solid fa-play fa-xl"></i></button>
+                <button onclick="stopVoiceOver()"><i class="fa-solid fa-pause fa-xl"></i></button>
+              </span>
+              </li>
+              <li class="slide">
+                <p class="page_number">6/6</p>
+                <div class="image_container">
+                <img src="illustrations/illustration-06.png" alt="Alternative spelling suggestions" class="illustrations">
+              </div>
+                <p class="persona_card_text" id="persona_card_text">She struggles with spelling but the search feature that suggests alternative spellings and correct words is helpful.</p>
+                <span class="sound_wrapper">
+                <button class="sound_button"><i class="fa-solid fa-volume-high fa-2xl"></i></button>
+                <button onclick="pageSix()"><i class="fa-solid fa-play fa-xl"></i></button>
+                <button onclick="stopVoiceOver()"><i class="fa-solid fa-pause fa-xl"></i></button>
+              </span>
+              </li>
+            </ul>
+          </section>
+    </main>
+    <script src="sketch.js"></script>
+  </body>
+</html>
