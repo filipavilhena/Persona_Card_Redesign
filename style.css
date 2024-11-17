@@ -9,6 +9,7 @@
     margin: auto;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
+    overflow: hidden;
   }
   
   .content-wrapper {
@@ -80,10 +81,11 @@
   /* Carrossel*/
   
   .slides-container {
-    height: calc(100vh - 2rem);
+    height: 100%;
     width: 100%;
     display: flex;
-    overflow: hidden;
+    overflow-x: hidden; 
+    overflow-y: auto;     
     scroll-behavior: smooth;
     list-style: none;
     margin: 0;
