@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/33e3e2b4ff.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <main>
+      <section class="content-wrapper">
+        <h1>Middle school student with attention deficit hyperactivity disorder and dyslexia</h1>
+        <h2>Accessibility Persona Card</h2>
+        <span class="sound_wrapper_index">
+          <button class="sound_button"><i class="fa-solid fa-volume-high fa-2xl"></i></button>
+          <button onclick="voiceOver()"><i class="fa-solid fa-play fa-xl"></i></button>
+          <button onclick="stopVoiceOver()"><i class="fa-solid fa-pause fa-xl"></i></button>
+        </span>
+        <a href="persona_card.html"><button type="button" onclick="cancelSpeak()" id="start_button"><i class="fa-solid fa-arrow-right fa-2xl"></i></button></a>
+    </section>
+    </main>
+    <script>
+      const synth = window.speechSynthesis;
+      const voiceSelect = document.querySelector("select");
+      voices = synth.getVoices();
+      var voiceOverActive = false;
+      const volumeSlider = document.getElementById('volumeSlider');
+
+function voiceOver(){
+  const utterThis = new SpeechSynthesisUtterance("Middle school student with attention deficit hyperactivity disorder and dyslexia. Accessibility Persona Card.");
+  const selectedOption = 'Karen';
+  for (const voice of voices) {
+    if (voice.name === selectedOption) {
+      utterThis.voice = voice;
+    }
+  }
+  utterThis.pitch = 1;
+  utterThis.rate = 1;
+  voiceOverActive = true;
+  if(synth.paused == false || synth.paused == true && synth.speaking == false){
+    synth.speak(utterThis);
+  } else {
+    synth.resume();
+}
+  //console.log(synth);
+}
+
+function stopVoiceOver(){
+  voiceOverActive = false;
+  synth.pause();
+}
+
+function cancelSpeak(){
+  voiceOverActive = false;
+  synth.cancel();
+}
+
+window.addEventListener('keydown', function(event) {
+  const key = event.key;
+  console.log("pesquisa");
+if(key == "Enter" || key== "ArrowRight"){
+    document.getElementById("start_button").click();
+  }else if (key == " "){
+    console.log("Space Pressed");
+    if(voiceOverActive == false){
+      voiceOver();
+    }else{
+      stopVoiceOver();
+    }
+  } 
+});
+
+    </script>
+  </body>
+</html>
