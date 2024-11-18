@@ -3,6 +3,7 @@ var slidesContainer = document.getElementById("slides-container");
 var slide = document.querySelector(".slide");
 var prevButton = document.getElementById("slide-arrow-prev");
 var nextButton = document.getElementById("slide-arrow-next");
+var home = document.getElementById("homepage_button");
 var pageNumber = 0;
 var slideWidth = slide.clientWidth;
 var voiceOverActive = false;
@@ -29,10 +30,12 @@ prevButton.addEventListener("click", () => {
 /*Keyboard Accessibility*/ 
 
 window.addEventListener('keydown', function(event) {
+
   const key = event.key;
   if(document.activeElement != document.getElementById('search_input')){
   //console.log(key);
   if(key == "ArrowRight"){
+    nextButton.focus();
   slidesContainer.scrollLeft += slideWidth;
   if(pageNumber < 5){
     pageNumber ++;
@@ -40,11 +43,13 @@ window.addEventListener('keydown', function(event) {
   console.log(pageNumber);
   cancelSpeak();
   } else if (key == "ArrowLeft"){
+    prevButton.focus();
     slidesContainer.scrollLeft -= slideWidth;
     if(pageNumber > 0){
       pageNumber --;
       } else if(pageNumber == 0){
-        document.getElementById("homepage_button").click();
+        home.click();
+        home.focus();
       }
     console.log(pageNumber);
     cancelSpeak();
@@ -52,31 +57,54 @@ window.addEventListener('keydown', function(event) {
     console.log("Space Pressed");
     if(voiceOverActive == false){
       if(pageNumber == 0){
+        document.getElementById('play1').focus();
         pageOne();
       } else if(pageNumber == 1){
+        document.getElementById("play2").focus();
         pageTwo();
       } else if(pageNumber == 2){
+        document.getElementById("play3").focus();
         pageThree();
       } else if(pageNumber == 3){
+        document.getElementById("play4").focus();
         pageFour();
       } else if(pageNumber == 4){
+        document.getElementById("play5").focus();
         pageFive();
       } else if(pageNumber == 5){
+        document.getElementById("play6").focus();
         pageSix();
       }
     }else{
+      if(pageNumber == 0){
+        document.getElementById('pause1').focus();
+      } else if(pageNumber == 1){
+        document.getElementById("pause2").focus();
+      } else if(pageNumber == 2){
+        document.getElementById("pause3").focus();
+      } else if(pageNumber == 3){
+        document.getElementById("pause4").focus();
+      } else if(pageNumber == 4){
+        document.getElementById("pause5").focus();
+      } else if(pageNumber == 5){
+        document.getElementById("pause6").focus();
+      }
       stopVoiceOver();
     }
   } else if(key == "h"){
-    document.getElementById("homepage_button").click();
+    home.click();
+    home.focus();
   } else if(key == "Shift"){
     Show();
-    document.getElementById("search_input").focus();
+    var search = document.getElementById("search_input");
+    search.focus();
   }
 } else if(document.activeElement === document.getElementById('search_input')){
   console.log("pesquisa");
 if(key == "Enter"){
-    document.getElementById("search_button").click();
+    var search_button = document.getElementById("search_button");
+    search_button.click();
+    search_button.focus();
   } else if(key == "ArrowDown"){
     cleanSearch();
   } else if(key == "Shift"){
@@ -86,6 +114,12 @@ if(key == "Enter"){
 }
 });
 
+document.addEventListener('keyup', function(event) {
+  const focusedButton = document.querySelector('button:focus');
+  if (focusedButton) {
+      focusedButton.blur();
+  }
+});
 
 /*Search Navigation*/
 var full_text = document.getElementsByClassName("persona_card_text");

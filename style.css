@@ -30,6 +30,10 @@
     padding: 0.6% 0.8%;
   }
 
+  #homepage_button:focus{
+    background-color: #5479b8;
+  }
+
   /*Images*/
 
   img {
@@ -160,6 +164,11 @@
     color: white;
   }
 
+  #search_button:focus{
+    background-color: #112A46;
+  }
+  
+
   #clean_search{
     position: absolute;
     top: 6vh;
@@ -193,3 +202,11 @@
     border-radius: 35px;
     margin-right: 1%;
   }
+
+  [id^="play"]:focus {
+    background-color: #5479b8;
+}
+
+[id^="pause"]:focus {
+  background-color: #f0aaa1;
+}

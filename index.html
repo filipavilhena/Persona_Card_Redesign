@@ -21,8 +21,8 @@
         <h2>Accessibility Persona Card</h2>
         <span class="sound_wrapper_index">
           <button class="sound_button"><i class="fa-solid fa-volume-high fa-2xl"></i></button>
-          <button onclick="voiceOver()"><i class="fa-solid fa-play fa-xl"></i></button>
-          <button onclick="stopVoiceOver()"><i class="fa-solid fa-pause fa-xl"></i></button>
+          <button onclick="voiceOver()" id="play_home"><i class="fa-solid fa-play fa-xl"></i></button>
+          <button onclick="stopVoiceOver()" id="pause_home"><i class="fa-solid fa-pause fa-xl"></i></button>
         </span>
         <a href="persona_card.html"><button type="button" onclick="cancelSpeak()" id="start_button"><i class="fa-solid fa-arrow-right fa-2xl"></i></button></a>
     </section>
@@ -67,15 +67,28 @@ window.addEventListener('keydown', function(event) {
   const key = event.key;
   console.log("pesquisa");
 if(key == "Enter" || key== "ArrowRight"){
-    document.getElementById("start_button").click();
+    var start_button = document.getElementById("start_button");
+    var nextArrow = document.getElementById("slide-arrow-next");
+    nextArrow.focus();
+    start_button.click();
+  
   }else if (key == " "){
     console.log("Space Pressed");
     if(voiceOverActive == false){
+      document.getElementById("play_home").focus();
       voiceOver();
     }else{
+      document.getElementById("pause_home").focus();
       stopVoiceOver();
     }
-  } 
+  }
+});
+
+document.addEventListener('keyup', function(event) {
+  const focusedButton = document.querySelector('button:focus');
+  if (focusedButton) {
+      focusedButton.blur();
+  }
 });
 
     </script>
