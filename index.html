@@ -13,18 +13,18 @@
   <body>
     <main>
       <section class="content-wrapper">
-        <a href="persona_card.html"><button class="slide-arrow" id="slide-arrow-next" onclick="cancelSpeak()">
+        <a href="persona_card.html"><button class="slide-arrow" id="slide-arrow-next" onclick="cancelSpeak()" aria-label="Start">
           &#8250;
         </button></a>
 
         <h1>Middle school student with attention deficit hyperactivity disorder and dyslexia</h1>
         <h2>Accessibility Persona Card</h2>
         <span class="sound_wrapper_index">
-          <button class="sound_button"><i class="fa-solid fa-volume-high fa-2xl"></i></button>
-          <button onclick="voiceOver()" id="play_home"><i class="fa-solid fa-play fa-xl"></i></button>
-          <button onclick="stopVoiceOver()" id="pause_home"><i class="fa-solid fa-pause fa-xl"></i></button>
+          <button class="sound_button" aria-label="Sound Icon"><i class="fa-solid fa-volume-high fa-2xl"></i></button>
+          <button onclick="voiceOver()" id="play_home" aria-label="Play Audio"><i class="fa-solid fa-play fa-xl"></i></button>
+          <button onclick="stopVoiceOver()" id="pause_home" aria-label="Pause Audio"><i class="fa-solid fa-pause fa-xl"></i></button>
         </span>
-        <a href="persona_card.html"><button type="button" onclick="cancelSpeak()" id="start_button"><i class="fa-solid fa-arrow-right fa-2xl"></i></button></a>
+        <a href="persona_card.html" aria-label="Start"><button type="button" onclick="cancelSpeak()" id="start_button" aria-label="Start"><i class="fa-solid fa-arrow-right fa-2xl"></i></button></a>
     </section>
     </main>
     <script>
