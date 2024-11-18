@@ -3,7 +3,6 @@ var slidesContainer = document.getElementById("slides-container");
 var slide = document.querySelector(".slide");
 var prevButton = document.getElementById("slide-arrow-prev");
 var nextButton = document.getElementById("slide-arrow-next");
-var home = document.getElementById("homepage_button");
 var pageNumber = 0;
 var slideWidth = slide.clientWidth;
 var voiceOverActive = false;
@@ -32,6 +31,8 @@ prevButton.addEventListener("click", () => {
 window.addEventListener('keydown', function(event) {
 
   const key = event.key;
+  var home = document.getElementById("homepage_button");
+
   if(document.activeElement != document.getElementById('search_input')){
   //console.log(key);
   if(key == "ArrowRight"){
@@ -91,7 +92,7 @@ window.addEventListener('keydown', function(event) {
       }
       stopVoiceOver();
     }
-  } else if(key == "h"){
+  } else if(key == "h" || key == 'H'){
     home.click();
     home.focus();
   } else if(key == "Shift"){

@@ -34,11 +34,6 @@
     background-color: #5479b8;
   }
 
-  #persona_card_title{
-    position: absolute;
-    top: -20vh;
-  }
-
   /*Images*/
 
   img {
@@ -51,6 +46,14 @@
     text-align: center; 
   }
 
+  #Preety{
+    display: block;
+    position: relative;
+    width: 62%;
+    margin: 0% 0% 2% 0%;
+    left: -17vw;
+  }
+
   /*Text*/
   h1{
     font-size: 2.5em;
@@ -58,7 +61,13 @@
     margin-bottom: 0;
     color: #112A46;
   }
-  
+
+  #persona_card_title{
+    position: absolute;
+    top: -50vh;
+    font-size: 0.1rem;
+  }
+
   h2{
     font-size: 1.8em;
     font-weight: 500;
@@ -70,8 +79,8 @@
     position: relative;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.2em;
-    width: 55%;
+    font-size: 1.4em;
+    width: 60%;
     margin-bottom: 4vh;
     margin-left: 18vw;
   }
