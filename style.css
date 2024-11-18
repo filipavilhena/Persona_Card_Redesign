@@ -34,6 +34,11 @@
     background-color: #5479b8;
   }
 
+  #main_content{
+    overflow-x: hidden; 
+    overflow-y: auto;    
+  }
+
   /*Images*/
 
   img {
