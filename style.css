@@ -34,6 +34,10 @@
     background-color: #5479b8;
   }
 
+  #persona_card_title{
+    display: none;
+  }
+
   /*Images*/
 
   img {
