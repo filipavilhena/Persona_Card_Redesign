@@ -35,7 +35,8 @@
   }
 
   #persona_card_title{
-    display: none;
+    position: absolute;
+    top: -20vh;
   }
 
   /*Images*/
