@@ -9,6 +9,14 @@
     <script src="https://kit.fontawesome.com/33e3e2b4ff.js" crossorigin="anonymous"></script>
     <title>Accessibility Card Redesign</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+  
+
+    <style>
+      .content-wrapper{
+    overflow-x: hidden; 
+    overflow-y: auto;     
+  } 
+      </style>
   </head>
   <body>
     <main id='main-content'>
@@ -16,7 +24,6 @@
         <a href="persona_card.html"><button class="slide-arrow" id="slide-arrow-next" onclick="cancelSpeak()" aria-label="Start">
           &#8250;
         </button></a>
-
         <h1>Middle school student with attention deficit hyperactivity disorder and dyslexia</h1>
         <h2>Accessibility Persona Card</h2>
         <img src="illustrations/preety.png" alt="Preety - A middle school student with ADHD and dyslexia" id="Preety">
@@ -26,7 +33,8 @@
           <button onclick="stopVoiceOver()" id="pause_home" aria-label="Pause Audio"><i class="fa-solid fa-pause fa-xl"></i></button>
         </span>
         <a href="persona_card.html" aria-label="Start"><button type="button" onclick="cancelSpeak()" id="start_button" aria-label="Start"><i class="fa-solid fa-arrow-right fa-2xl"></i></button></a>
-    </section>
+      </section>
+    </div>
     </main>
     <script>
       const synth = window.speechSynthesis;

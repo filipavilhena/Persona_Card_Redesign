@@ -34,7 +34,7 @@
     background-color: #5479b8;
   }
 
-  #main_content{
+  #scroll_index{
     overflow-x: hidden; 
     overflow-y: auto;    
   }
